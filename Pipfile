@@ -8,6 +8,8 @@ verify_ssl = true
 [packages]
 falcon = "*"
 gunicorn = "*"
+jsonlogging = "*"
+python-json-logger = "*"
 
 [requires]
 python_version = "3.7"

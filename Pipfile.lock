@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "2a4ad850e88c53fe68d55f767775c669ddf1af9a74557029c5b0cfac16ca1286"
+            "sha256": "c8284fb2396002fc73e57d29006b63bf289b43703e13f2a710537a1e1b64447c"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -43,6 +43,22 @@
             ],
             "index": "pypi",
             "version": "==19.9.0"
+        },
+        "jsonlogging": {
+            "hashes": [
+                "sha256:1c5a0783fcb19644115be90b67072341d87ce21c99279ba8670b54ea5fce3d21",
+                "sha256:d24591de0dc003eee4abc203bafd2548d23be501800382e295edd3fc4001a814"
+            ],
+            "index": "pypi",
+            "version": "==0.190701"
+        },
+        "python-json-logger": {
+            "hashes": [
+                "sha256:2232bdbe085535fe371b0ec1d562e84cf419d201c350c0042112053307e15412",
+                "sha256:b7a31162f2a01965a5efb94453ce69230ed208468b0bbc7fdfc56e6d8df2e281"
+            ],
+            "index": "pypi",
+            "version": "==0.1.11"
         }
     },
     "develop": {}
