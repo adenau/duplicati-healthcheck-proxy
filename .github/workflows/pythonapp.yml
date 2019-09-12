@@ -19,8 +19,18 @@ jobs:
         python -m pip install --upgrade pip
         pip install pipenv
         pipenv install --deploy --ignore-pipfile
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag adenau/duplicati-healthcheck-proxy:$(date +%s)
+    - name: Login to DockerHub
+      uses: actions/docker/login@master
+      secrets: 
+        - DOCKER_USERNAME
+        - DOCKER_PASSWORD
+    - name: Build Docker Image
+      uses: actions/docker/cli@master
+      args: build . --file Dockerfile --tag adenau/duplicati-healthcheck-proxy:$(date +%s)
+    - name: Push to DockerHub
+      uses: actions/docker/cli@master
+      args: build . --file Dockerfile --tag adenau/duplicati-healthcheck-proxy:$(date +%s)
+      
     #- name: Lint with flake8
     #  run: |
     #    pip install flake8
