@@ -20,16 +20,11 @@ jobs:
         pip install pipenv
         pipenv install --deploy --ignore-pipfile
     - name: Login to DockerHub
-      uses: actions/docker/login@master
-      secrets: 
-        - DOCKER_USERNAME
-        - DOCKER_PASSWORD
+      run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
     - name: Build Docker Image
-      uses: actions/docker/cli@master
-      args: build . --file Dockerfile --tag adenau/duplicati-healthcheck-proxy:$(date +%s)
+      run: docker build . --file Dockerfile --tag adenau/duplicati-healthcheck-proxy:$(date +%s)
     - name: Push to DockerHub
-      uses: actions/docker/cli@master
-      args: build . --file Dockerfile --tag adenau/duplicati-healthcheck-proxy:$(date +%s)
+      run: docker push adenau/duplicati-healthcheck-proxy:$(date +%s)
       
     #- name: Lint with flake8
     #  run: |
