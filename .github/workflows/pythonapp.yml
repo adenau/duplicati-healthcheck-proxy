@@ -8,7 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - name: Checkout the code
+      uses: actions/checkout@v1
     - name: Set up Python 3.7
       uses: actions/setup-python@v1
       with:
@@ -18,7 +19,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install pipenv
         pipenv install --deploy --ignore-pipfile
-    - uses: actions/checkout@v1
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag adenau/duplicati-healthcheck-proxy:$(date +%s)
     #- name: Lint with flake8
