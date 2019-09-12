@@ -20,7 +20,10 @@ jobs:
         pip install pipenv
         pipenv install --deploy --ignore-pipfile
     - name: Login to DockerHub
-      run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
+      uses: actions/docker/login@master
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
     - name: Build Docker Image
       run: docker build . --file Dockerfile --tag adenau/duplicati-healthcheck-proxy:$(date +%s)
     - name: Push to DockerHub
