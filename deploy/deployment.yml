@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: duplicati-healthcheck-proxy-deployment
+  name: healthcheck-proxy-deployment
   labels:
-    app: duplicati-healthcheck-proxy
+    app: healthcheck-proxy
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: duplicati-healthcheck-proxy
+      app: healthcheck-proxy
   template:
     metadata:
       labels:
-        app: duplicati-healthcheck-proxy
+        app: healthcheck-proxy
     spec:
       containers:
       - name: nginx
-        image: adenau/duplicati-healthcheck-proxy:425433626205121e3f18cb4ce95459c4001c6bf5
+        image: adenau/healthcheck-proxy:425433626205121e3f18cb4ce95459c4001c6bf5
         ports:
         - containerPort: 8000

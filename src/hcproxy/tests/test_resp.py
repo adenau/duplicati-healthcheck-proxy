@@ -1,5 +1,5 @@
 from falcon import testing
-from dhp.bootstrap import Bootstrap
+from hcproxy.bootstrap import Bootstrap
 import pytest
 
 

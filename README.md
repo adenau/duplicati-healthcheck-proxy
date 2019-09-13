@@ -1,4 +1,4 @@
-# duplicati-healthcheck-proxy
+# Healthcheck Proxy
 
 Duplicati (found at ...) is an excellent backup solution, but can be challenging to manage when installed on a large number of computers. There are some excellent centralized monitoring solution, such as . However, I am currently using Heathchecks.io (found at https://healthchecks.io) to monitor my infrastructure. As such, I needed a solution to link both products.
 
@@ -16,7 +16,7 @@ Duplicati is a backup software that can be installed on most modern desktop OS (
 
 The preferred solution to run duplicati-healthcheck-proxy is docker.
 
-    docker run -p 8000:8000 adenau/duplicati-healthcheck-proxy
+    docker run -p 8000:8000 adenau/healthcheck-proxy
 
 To deply in Kubernetes, assuming your kubectl is properly configured, changed to the deploy directory and 
 
