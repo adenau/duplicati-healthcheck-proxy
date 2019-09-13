@@ -18,22 +18,21 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pipenv
-        pipenv install --deploy --ignore-pipfile
+        pipenv install --deploy --ignore-pipfile  
+    - name: Lint with flake8
+      run: |
+        pip install flake8
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    - name: Test with pytest
+      run: |
+        pip install pytest
+        pipenv run pytest
     - name: Login to DockerHub
       run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
     - name: Build Docker Image
       run: docker build . --file Dockerfile --tag adenau/duplicati-healthcheck-proxy:$GITHUB_SHA
     - name: Push to DockerHub
       run: docker push adenau/duplicati-healthcheck-proxy:$GITHUB_SHA
-      
-    #- name: Lint with flake8
-    #  run: |
-    #    pip install flake8
-    #    # stop the build if there are Python syntax errors or undefined names
-    #    flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-    #    # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-    #    flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    #- name: Test with pytest
-    #  run: |
-    #    pip install pytest
-    #    pytest

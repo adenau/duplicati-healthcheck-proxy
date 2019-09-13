@@ -10,6 +10,7 @@ falcon = "*"
 gunicorn = "*"
 jsonlogging = "*"
 python-json-logger = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.7"
