@@ -1,0 +1,125 @@
+message=Duplicati Backup report for DevTest
+
+DeletedFiles: 0
+DeletedFolders: 0
+ModifiedFiles: 0
+ExaminedFiles: 3
+OpenedFiles: 3
+AddedFiles: 3
+SizeOfModifiedFiles: 0
+SizeOfAddedFiles: 324925
+SizeOfExaminedFiles: 324925
+SizeOfOpenedFiles: 324925
+NotProcessedFiles: 0
+AddedFolders: 1
+TooLargeFiles: 0
+FilesWithError: 0
+ModifiedFolders: 0
+ModifiedSymlinks: 0
+AddedSymlinks: 0
+DeletedSymlinks: 0
+PartialBackup: False
+Dryrun: False
+MainOperation: Backup
+ParsedResult: Success
+Version: 2.0.4.5 (2.0.4.5_beta_2018-11-28)
+EndTime: 2019-09-13 12:48:55 PM (1568393335)
+BeginTime: 2019-09-13 12:48:54 PM (1568393334)
+Duration: 00:00:01.0164740
+
+
+
+
+'message=Duplicati Backup report for DevTest
+
+Failed: Found 3 files that are missing from the remote storage, please run repair
+Details: Duplicati.Library.Interface.UserInformationException: Found 3 files that are missing from the remote storage, please run repair
+  at Duplicati.Library.Main.Operation.FilelistProcessor.VerifyRemoteList (Duplicati.Library.Main.BackendManager backend, Duplicati.Library.Main.Options options, Duplicati.Library.Main.Database.LocalDatabase database, Duplicati.Library.Main.IBackendWriter log, System.String protectedfile) [0x00203] in <c6c6871f516b48f59d88f9d731c3ea4d>:0 
+  at Duplicati.Library.Main.Operation.BackupHandler.PreBackupVerify (Duplicati.Library.Main.BackendManager backend, System.String protectedfile) [0x0010d] in <c6c6871f516b48f59d88f9d731c3ea4d>:0 
+  at Duplicati.Library.Main.Operation.BackupHandler.RunAsync (System.String[] sources, Duplicati.Library.Utility.IFilter filter) [0x01031] in <c6c6871f516b48f59d88f9d731c3ea4d>:0 
+  at CoCoL.ChannelExtensions.WaitForTaskOrThrow (System.Threading.Tasks.Task task) [0x00050] in <6973ce2780de4b28aaa2c5ffc59993b1>:0 
+  at Duplicati.Library.Main.Operation.BackupHandler.Run (System.String[] sources, Duplicati.Library.Utility.IFilter filter) [0x00008] in <c6c6871f516b48f59d88f9d731c3ea4d>:0 
+  at Duplicati.Library.Main.Controller+<>c__DisplayClass13_0.<Backup>b__0 (Duplicati.Library.Main.BackupResults result) [0x00035] in <c6c6871f516b48f59d88f9d731c3ea4d>:0 
+  at Duplicati.Library.Main.Controller.RunAction[T] (T result, System.String[]& paths, Duplicati.Library.Utility.IFilter& filter, System.Action`1[T] method) [0x0011d] in <c6c6871f516b48f59d88f9d731c3ea4d>:0 
+
+Log data:
+2019-09-13 12:50:36 -04 - [Warning-Duplicati.Library.Main.Controller-UnsupportedOption]: The supplied option --/Users/adenau/git/DevTest/ is not supported and will be ignored
+2019-09-13 12:50:36 -04 - [Warning-Duplicati.Library.Main.Operation.FilelistProcessor-MissingFile]: Missing file: duplicati-20190913T164855Z.dlist.zip
+2019-09-13 12:50:36 -04 - [Warning-Duplicati.Library.Main.Operation.FilelistProcessor-MissingFile]: Missing file: duplicati-bc6b477861591419ab392cc3f45a73956.dblock.zip
+2019-09-13 12:50:36 -04 - [Warning-Duplicati.Library.Main.Operation.FilelistProcessor-MissingFile]: Missing file: duplicati-ic344948b2cbc407aaff63711877af376.dindex.zip
+2019-09-13 12:50:36 -04 - [Error-Duplicati.Library.Main.Operation.FilelistProcessor-MissingRemoteFiles]: Found 3 files that are missing from the remote storage, please run repair
+2019-09-13 12:50:36 -04 - [Error-Duplicati.Library.Main.Operation.BackupHandler-FatalError]: Fatal error
+Duplicati.Library.Interface.UserInformationException: Found 3 files that are missing from the remote storage, please run repair
+  at Duplicati.Library.Main.Operation.FilelistProcessor.VerifyRemoteList (Duplicati.Library.Main.BackendManager backend, Duplicati.Library.Main.Options options, Duplicati.Library.Main.Database.LocalDatabase database, Duplicati.Library.Main.IBackendWriter log, System.String protectedfile) [0x00203] in <c6c6871f516b48f59d88f9d731c3ea4d>:0 
+  at Duplicati.Library.Main.Operation.BackupHandler.PreBackupVerify (Duplicati.Library.Main.BackendManager backend, System.String protectedfile) [0x0010d] in <c6c6871f516b48f59d88f9d731c3ea4d>:0 
+  at Duplicati.Library.Main.Operation.BackupHandler.RunAsync (System.String[] sources, Duplicati.Library.Utility.IFilter filter) [0x004fa] in <c6c6871f516b48f59d88f9d731c3ea4d>:0 
+'
+
+Warning
+via-bassandra to ros-Maximus - 2019-07-27 11:42:12
+Backup set
+via-bassandra to ros-Maximus
+Username
+adenau
+IP address
+24.202.134.183
+Result
+warning
+Deleted files
+4
+Deleted folders
+1
+Modified files
+2
+Examined files
+7904
+Opened files
+122
+Added files
+120
+Modified data
+9.52 GiB
+New data
+629.38 MiB
+Examined data
+45.00 GiB
+Opened data
+10.14 GiB
+Not processed files
+0
+New folders
+0
+Too large files
+0
+Files with error
+0
+Modified folders
+0
+Modified symlinks
+0
+Added symlinks
+0
+Deleted symlinks
+0
+Partial backup
+no
+Dry run
+no
+Operation
+Backup
+Report result
+Warning
+Version
+2.0.4.5 (2.0.4.5_beta_2018-11-28)
+End of backup
+2019-07-27 11:42:12
+Begin of backup
+2019-07-27 11:36:35
+Duration
+00:05:37
+Log
+2019-07-27 11:37:14 -04 - [Warning-Duplicati.Library.Main.Operation.Backup.UploadSyntheticFilelist-MissingTemporaryFilelist]: Expected there to be a temporary fileset for synthetic filelist (9, duplicati-bb1bc7906313340109342b8117af5b3fd.dblock.zip.aes), but none was found?
+Time of report
+2019-07-27 11:42:12
+Last change
+2019-07-27 11:42:12
