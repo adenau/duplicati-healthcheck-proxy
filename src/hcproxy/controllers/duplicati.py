@@ -10,5 +10,6 @@ class DuplicatiController(object):
         print(data)
         
         resp.status = falcon.HTTP_200  # This is the default status
-        resp_content = {}
+        resp_content = { "data" : data }
         resp.body = json.dumps(resp_content)
+
