@@ -7,9 +7,9 @@ class Bootstrap(object):
 
     #_testMode = False
 
-    def create(self):
+    def create(self, hc_override=""):
 
         self.app = falcon.API()
-        self.app.add_route('/duplicati', DuplicatiController())
+        self.app.add_route('/duplicati', DuplicatiController(hc_override=""))
 
         return self.app

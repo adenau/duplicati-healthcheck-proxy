@@ -3,6 +3,13 @@ import json
 
 class DuplicatiController(object):
 
+    _hc_url = "https://hc-ping.com/"
+
+    def __init__(self, hc_override=""):
+
+        if (hc_override != ""):
+            self._hc_url = hc_override
+
     def on_post(self, req, resp):
         """Handles POST requests"""
         

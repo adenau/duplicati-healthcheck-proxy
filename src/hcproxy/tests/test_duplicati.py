@@ -21,7 +21,7 @@ def client():
         #url_for_success = httpserver.url_for("/f8edfeb0-4025-4996-add7-57364accabe3")
         #url_for_failure = httpserver.url_for("/f8edfeb0-4025-4996-add7-57364accabe3/fail")
 
-    return testing.TestClient(bootstrap.create())
+    return testing.TestClient(bootstrap.create(hc_override=httpserver.url_for("/")))
 
 def test_success(client):
     
