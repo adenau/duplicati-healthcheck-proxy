@@ -5,6 +5,8 @@ from hcproxy.controllers.duplicati import DuplicatiController
 
 class Bootstrap(object):
 
+    #_testMode = False
+
     def create(self):
 
         self.app = falcon.API()
