@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "/Users/adenau/git/duplicati-healthcheck-proxy"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"python.pythonPath": "/Users/adenau/.local/share/virtualenvs/duplicati-healthcheck-proxy-0ov_YTJK/bin/python"
+	}
+}
