@@ -22,9 +22,10 @@ class DuplicatiController(object):
         logging.info("[DuplicatiController] : Received POST from {}".format(req) )
 
         parsed_report = self.parseReport(req.bounded_stream.read().decode("utf-8"))
-        check_for_success = "Failed:" in parsed_report.keys()
+        
+        check_for_failure = ("Failed" in parsed_report.keys())
 
-        hc_return = self.signalHealthCheck(check_id, check_for_success, parsed_report)
+        hc_return = self.signalHealthCheck(check_id, not check_for_failure, parsed_report)
 
         if hc_return:
             resp.status = falcon.HTTP_200
@@ -44,7 +45,7 @@ class DuplicatiController(object):
         logging.debug("[DuplicatiController] : Sending ping to HealthCheck at {}".format(url) )
 
         try:
-            response = requests.post(url, data={'key':'value'})
+            response = requests.post(url, data=content)
         except requests.exceptions.RequestException as e:  # This is the correct syntax
             logging.error("[DuplicatiController] Unable to reach Healthcheck server {}".format(e))
             return False
@@ -61,27 +62,57 @@ class DuplicatiController(object):
         raw_report = body_content.splitlines()
         parsed_report = {}
 
+        parsed_report["message"] = raw_report[0]
+
+        if (raw_report[2][:6] == "Failed"):
+            return self.parseFailedReport(raw_report, parsed_report)
+        else:
+            return self.parseSuccessfulReport(raw_report, parsed_report)
+
+    def parseSuccessfulReport(self, raw_report, parsed_report):
+
         for line in raw_report:
+            keyvalue = line.split(":",1)
 
-            previous_key = ""
-
-            if (line[:1] == " "):
-                parsed_report[previous_key] = parsed_report[previous_key] + line
-            else:
-                keyvalue = line.split()
-
-                if ( len(keyvalue) > 1):
+            if ( len(keyvalue) > 1):
                     key = keyvalue[0]
                     value = keyvalue[1]
                     parsed_report[key] = value
-                else:
-                    parsed_report[previous_key] = parsed_report[previous_key] + keyvalue[0]
 
         pp = pprint.PrettyPrinter(indent=4)
         pp.pprint(parsed_report)
 
         return parsed_report
-        
 
 
-        
+    def parseFailedReport(self, raw_report, parsed_report):
+
+        state = "Start"
+
+        for line in raw_report:
+
+            if (line[:7] == "Details"):
+                state = "Details"
+                keyvalue = line.split(":",1)
+                parsed_report["Details"] = keyvalue[1]
+
+            elif (line[:7] == "Log dat"):
+                state = "LogData"
+                keyvalue = line.split(":",1)
+                parsed_report["Log Data"] = keyvalue[1]
+            
+            elif (line[:6] == "Failed"):
+                state = "Failed"
+                keyvalue = line.split(":",1)
+                parsed_report["Failed"] = keyvalue[1]
+
+            elif (state == "Details"):
+                parsed_report["Details"] = parsed_report["Details"] + line
+
+            elif (state == "LogData"):
+                parsed_report["Log Data"] = parsed_report["Log Data"] + line
+
+        pp = pprint.PrettyPrinter(indent=4)
+        pp.pprint(parsed_report)
+
+        return parsed_report
