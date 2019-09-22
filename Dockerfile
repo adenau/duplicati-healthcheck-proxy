@@ -8,7 +8,8 @@ ENV PIP_NO_CACHE_DIR=off \
   PIPENV_COLORBLIND=true \
   PIPENV_NOSPIN=true
 
-COPY src /app
+COPY Pipfile* /app/
+COPY src /app/
 WORKDIR /app
 
 RUN pip3 install pipenv
