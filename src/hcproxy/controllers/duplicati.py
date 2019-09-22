@@ -45,7 +45,7 @@ class DuplicatiController(object):
         logging.debug("[DuplicatiController] : Sending ping to HealthCheck at {}".format(url) )
 
         try:
-            response = requests.post(url, data=content)
+            response = requests.post(url, json=content)
         except requests.exceptions.RequestException as e:  # This is the correct syntax
             logging.error("[DuplicatiController] Unable to reach Healthcheck server {}".format(e))
             return False

@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: adenau/healthcheck-proxy:8393b9b11e39b1f5ec4b65789a278bb9a7f9ae65
+        image: adenau/healthcheck-proxy:fba5e3bd8e0eb45432405fe7bda4533b8fd7600f
         ports:
         - containerPort: 8000

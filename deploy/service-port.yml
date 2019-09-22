@@ -8,5 +8,5 @@ spec:
     app: healthcheck-proxy
   ports:
   - protocol: TCP
-    port: 32080
-    targetPort: 8000
+    port: 8000
+    nodePort: 32080
