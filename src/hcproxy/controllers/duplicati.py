@@ -79,9 +79,6 @@ class DuplicatiController(object):
                     value = keyvalue[1]
                     parsed_report[key] = value
 
-        pp = pprint.PrettyPrinter(indent=4)
-        pp.pprint(parsed_report)
-
         return parsed_report
 
 
@@ -111,8 +108,5 @@ class DuplicatiController(object):
 
             elif (state == "LogData"):
                 parsed_report["Log Data"] = parsed_report["Log Data"] + line
-
-        pp = pprint.PrettyPrinter(indent=4)
-        pp.pprint(parsed_report)
 
         return parsed_report
