@@ -33,6 +33,6 @@ jobs:
     - name: Login to DockerHub
       run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
     - name: Build Docker Image
-      run: docker build . --file Dockerfile --tag adenau/healthcheck-proxy:unstable
+      run: docker build . --file Dockerfile --tag adenau/healthchecks-proxy:unstable
     - name: Push to DockerHub
-      run: docker push adenau/healthcheck-proxy:unstable
+      run: docker push adenau/healthchecks-proxy:unstable
