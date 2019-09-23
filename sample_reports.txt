@@ -55,5 +55,235 @@ Duplicati.Library.Interface.UserInformationException: Found 3 files that are mis
   at Duplicati.Library.Main.Operation.BackupHandler.RunAsync (System.String[] sources, Duplicati.Library.Utility.IFilter filter) [0x004fa] in <c6c6871f516b48f59d88f9d731c3ea4d>:0 
 "
 
+---------
 
+DeletedFiles: 422
+
+DeletedFolders: 126
+
+ModifiedFiles: 276
+
+ExaminedFiles: 321689
+
+OpenedFiles: 751
+
+AddedFiles: 475
+
+SizeOfModifiedFiles: 1513615253
+
+SizeOfAddedFiles: 6364767580
+
+SizeOfExaminedFiles: 944983132959
+
+SizeOfOpenedFiles: 7882249415
+
+NotProcessedFiles: 0
+
+AddedFolders: 181
+
+TooLargeFiles: 0
+
+FilesWithError: 0
+
+ModifiedFolders: 0
+
+ModifiedSymlinks: 0
+
+AddedSymlinks: 0
+
+DeletedSymlinks: 0
+
+PartialBackup: False
+
+Dryrun: False
+
+MainOperation: Backup
+
+CompactResults: null
+
+DeleteResults:
+
+    DeletedSets: []
+
+    Dryrun: False
+
+    MainOperation: Delete
+
+    CompactResults: null
+
+    ParsedResult: Success
+
+    Version: 2.0.4.5 (2.0.4.5_beta_2018-11-28)
+
+    EndTime: 2019-09-22 8:17:19 PM (1569197839)
+
+    BeginTime: 2019-09-22 8:16:40 PM (1569197800)
+
+    Duration: 00:00:38.9180028
+
+    Messages: [
+
+        2019-09-22 18:55:00 -04 - [Information-Duplicati.Library.Main.Controller-StartingOperation]: The operation Backup has started,
+
+        2019-09-22 18:57:04 -04 - [Information-Duplicati.Library.Main.BasicResults-BackendEvent]: Backend event: List - Started:  (),
+
+        2019-09-22 18:57:10 -04 - [Information-Duplicati.Library.Main.BasicResults-BackendEvent]: Backend event: List - Completed:  (29.16 KB),
+
+        2019-09-22 19:42:38 -04 - [Information-Duplicati.Library.Main.BasicResults-BackendEvent]: Backend event: Put - Started: duplicati-b4cf19479a22a450eb9f4b1b67e78e4b2.dblock.zip.aes (49.90 MB),
+
+        2019-09-22 19:42:40 -04 - [Information-Duplicati.Library.Main.BasicResults-BackendEvent]: Backend event: Put - Completed: duplicati-b4cf19479a22a450eb9f4b1b67e78e4b2.dblock.zip.aes (49.90 MB),
+
+...
+
+    ]
+
+    Warnings: []
+
+    Errors: []
+
+    BackendStatistics:
+
+        RemoteCalls: 238
+
+        BytesUploaded: 6066961317
+
+        BytesDownloaded: 82043463
+
+        FilesUploaded: 233
+
+        FilesDownloaded: 3
+
+        FilesDeleted: 0
+
+        FoldersCreated: 0
+
+        RetryAttempts: 0
+
+        UnknownFileSize: 0
+
+        UnknownFileCount: 0
+
+        KnownFileCount: 30088
+
+        KnownFileSize: 787611299832
+
+        LastBackupDate: 2019-09-22 6:55:00 PM (1569192900)
+
+        BackupListCount: 15
+
+        TotalQuotaSpace: 0
+
+        FreeQuotaSpace: 0
+
+        AssignedQuotaSpace: -1
+
+        ReportedQuotaError: False
+
+        ReportedQuotaWarning: False
+
+        ParsedResult: Success
+
+        Version: 2.0.4.5 (2.0.4.5_beta_2018-11-28)
+
+        Messages: [
+
+            2019-09-22 18:55:00 -04 - [Information-Duplicati.Library.Main.Controller-StartingOperation]: The operation Backup has started,
+
+            2019-09-22 18:57:04 -04 - [Information-Duplicati.Library.Main.BasicResults-BackendEvent]: Backend event: List - Started:  (),
+
+            2019-09-22 18:57:10 -04 - [Information-Duplicati.Library.Main.BasicResults-BackendEvent]: Backend event: List - Completed:  (29.16 KB),
+
+            2019-09-22 19:42:38 -04 - [Information-Duplicati.Library.Main.BasicResults-BackendEvent]: Backend event: Put - Started: duplicati-b4cf19479a22a450eb9f4b1b67e78e4b2.dblock.zip.aes (49.90 MB),
+
+            2019-09-22 19:42:40 -04 - [Information-Duplicati.Library.Main.BasicResults-BackendEvent]: Backend event: Put - Completed: duplicati-b4cf19479a22a450eb9f4b1b67e78e4b2.dblock.zip.aes (49.90 MB),
+
+...
+
+        ]
+
+        Warnings: []
+
+        Errors: []
+
+RepairResults: null
+
+TestResults:
+
+    MainOperation: Test
+
+    Verifications: [
+
+        Key: duplicati-20190922T225500Z.dlist.zip.aes
+
+        Value: [],
+
+        Key: duplicati-i0bfadc95076d4931add8f6439c1c5426.dindex.zip.aes
+
+        Value: [],
+
+        Key: duplicati-b417637eb8a0a467caab7e1d5f3eea31a.dblock.zip.aes
+
+        Value: []
+
+    ]
+
+    ParsedResult: Success
+
+    Version: 2.0.4.5 (2.0.4.5_beta_2018-11-28)
+
+    EndTime: 2019-09-22 8:17:31 PM (1569197851)
+
+    BeginTime: 2019-09-22 8:17:30 PM (1569197850)
+
+    Duration: 00:00:01.0094622
+
+    Messages: [
+
+        2019-09-22 18:55:00 -04 - [Information-Duplicati.Library.Main.Controller-StartingOperation]: The operation Backup has started,
+
+        2019-09-22 18:57:04 -04 - [Information-Duplicati.Library.Main.BasicResults-BackendEvent]: Backend event: List - Started:  (),
+
+        2019-09-22 18:57:10 -04 - [Information-Duplicati.Library.Main.BasicResults-BackendEvent]: Backend event: List - Completed:  (29.16 KB),
+
+        2019-09-22 19:42:38 -04 - [Information-Duplicati.Library.Main.BasicResults-BackendEvent]: Backend event: Put - Started: duplicati-b4cf19479a22a450eb9f4b1b67e78e4b2.dblock.zip.aes (49.90 MB),
+
+        2019-09-22 19:42:40 -04 - [Information-Duplicati.Library.Main.BasicResults-BackendEvent]: Backend event: Put - Completed: duplicati-b4cf19479a22a450eb9f4b1b67e78e4b2.dblock.zip.aes (49.90 MB),
+
+...
+
+    ]
+
+    Warnings: []
+
+    Errors: []
+
+ParsedResult: Success
+
+Version: 2.0.4.5 (2.0.4.5_beta_2018-11-28)
+
+EndTime: 2019-09-22 8:17:31 PM (1569197851)
+
+BeginTime: 2019-09-22 6:55:00 PM (1569192900)
+
+Duration: 01:22:31.5370416
+
+Messages: [
+
+    2019-09-22 18:55:00 -04 - [Information-Duplicati.Library.Main.Controller-StartingOperation]: The operation Backup has started,
+
+    2019-09-22 18:57:04 -04 - [Information-Duplicati.Library.Main.BasicResults-BackendEvent]: Backend event: List - Started:  (),
+
+    2019-09-22 18:57:10 -04 - [Information-Duplicati.Library.Main.BasicResults-BackendEvent]: Backend event: List - Completed:  (29.16 KB),
+
+    2019-09-22 19:42:38 -04 - [Information-Duplicati.Library.Main.BasicResults-BackendEvent]: Backend event: Put - Started: duplicati-b4cf19479a22a450eb9f4b1b67e78e4b2.dblock.zip.aes (49.90 MB),
+
+    2019-09-22 19:42:40 -04 - [Information-Duplicati.Library.Main.BasicResults-BackendEvent]: Backend event: Put - Completed: duplicati-b4cf19479a22a450eb9f4b1b67e78e4b2.dblock.zip.aes (49.90 MB),
+
+...
+
+]
+
+Warnings: []
+
+Errors: []
 
