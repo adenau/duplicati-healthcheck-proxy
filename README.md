@@ -16,7 +16,7 @@ Duplicati is a backup software that can be installed on most modern desktop OS (
 
 The preferred solution to run duplicati-healthcheck-proxy is docker.
 
-    docker run -p 8000:8000 adenau/healthcheck-proxy
+    docker run -p 8000:8000 adenau/healthchecks-proxy
 
 To deply in Kubernetes, assuming your kubectl is properly configured, changed to the deploy directory and 
 
