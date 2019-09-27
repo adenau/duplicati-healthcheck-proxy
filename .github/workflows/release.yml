@@ -24,6 +24,6 @@ jobs:
     - name: Login to DockerHub
       run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
     - name: Build Docker Image
-      run: docker build . --file Dockerfile --tag adenau/healthchecks-proxy:${{ GITHUB_REF }}
+      run: docker build . --file Dockerfile --tag adenau/healthchecks-proxy:$GITHUB_REF
     - name: Push to DockerHub
-      run: docker push adenau/healthchecks-proxy:${{ GITHUB_REF }}
+      run: docker push adenau/healthchecks-proxy:$GITHUB_REF
