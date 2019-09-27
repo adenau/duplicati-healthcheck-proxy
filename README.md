@@ -31,10 +31,9 @@ The preferred solution to run Healthcheck Proxy is Docker.
 
     docker run -p 8000:8000 adenau/healthchecks-proxy
 
-To deploy in Kubernetes, assuming your kubectl is properly configured, changed to the deploy directory and 
+To deploy in Kubernetes, Helm prefered, change to the deploy directory and 
 
-    kubectl --kubeconfig ~/.kube/kaon-kubeconfig.yaml create -f deployment.yml 
-    kubectl --kubeconfig ~/.kube/kaon-kubeconfig.yaml create -f service-lb.yml 
+    helm install --name healthchecks-proxy ./healthchecks-proxy
 
 Deployment was tested on Digital Ocean.
 
