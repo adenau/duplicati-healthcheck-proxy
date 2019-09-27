@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "healthcheck-proxy.fullname" . }}
+  labels:
+{{ include "healthcheck-proxy.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+      nodePort: {{ .Values.service.nodeport }}
+  selector:
+    app.kubernetes.io/name: {{ include "healthcheck-proxy.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
