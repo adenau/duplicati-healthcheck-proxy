@@ -2,7 +2,8 @@ name: Push Master
 
 on:
   push:
-    branches:
+    tags:
+      - '!refs/tags/*'
 
 jobs:
   build:
