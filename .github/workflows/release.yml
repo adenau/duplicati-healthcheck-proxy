@@ -31,4 +31,4 @@ jobs:
         USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
       run: docker build . --file Dockerfile --tag $USERNAME/healthchecks-proxy:${GITHUB_REF:10}
     - name: Push to DockerHub
-      run: docker push adenau/healthchecks-proxy:$GITHUB_REF
+      run: docker push adenau/healthchecks-proxy:${GITHUB_REF:10}
