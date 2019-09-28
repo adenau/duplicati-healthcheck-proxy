@@ -2,6 +2,8 @@ name: Push Master
 
 on:
   push:
+    branches:
+      - master
     tags:
       - '!refs/tags/*'
 
