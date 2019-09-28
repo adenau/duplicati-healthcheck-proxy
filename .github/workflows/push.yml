@@ -8,6 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+    - name: Stop if its a tag
+      uses: actions/bin/filter@master
+      args: "not tag"
+      
     - name: Checkout the code
       uses: actions/checkout@v1
     - name: Set up Python 3.7
