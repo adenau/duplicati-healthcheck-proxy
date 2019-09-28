@@ -1,4 +1,4 @@
-name: Healthchecks Proxy Release
+name: Release
 
 on:
   release:

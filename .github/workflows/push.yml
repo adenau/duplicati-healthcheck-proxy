@@ -1,6 +1,9 @@
-name: Healthchecks Proxy Push
+name: Push Master
 
 on: [push]
+  tags:
+    branches:
+      - master
 
 jobs:
   build:
