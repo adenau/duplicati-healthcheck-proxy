@@ -32,9 +32,9 @@ jobs:
         pipenv run pytest
     - name: Login to DockerHub
       env:
-        $USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-        $PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
-      run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
+        USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+        PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+      run: docker login -u $USERNAME -p $PASSWORD
     - name: Build Docker Image
       run: docker build . --file Dockerfile --tag adenau/healthchecks-proxy:unstable
     - name: Push to DockerHub

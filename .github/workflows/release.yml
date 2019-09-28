@@ -23,8 +23,8 @@ jobs:
         pipenv install --deploy --ignore-pipfile  
     - name: Login to DockerHub
       env:
-        $USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-        $PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+        USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+        PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
       run: docker login -u $USERNAME -p $PASSWORD
     - name: Build Docker Image
       env:
