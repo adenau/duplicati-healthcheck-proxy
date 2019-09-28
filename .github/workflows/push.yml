@@ -4,26 +4,27 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
 
     - name: Stop if its a tag
       uses: actions/bin/filter@master
       args: "not tag"
-      
+
     - name: Checkout the code
       uses: actions/checkout@v1
+
     - name: Set up Python 3.7
       uses: actions/setup-python@v1
       with:
         python-version: 3.7
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install pipenv
         pipenv install --deploy --ignore-pipfile  
+
     - name: Lint with flake8
       run: |
         pip install flake8
@@ -31,16 +32,20 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
     - name: Test with pytest
       run: |
         pip install pytest
         pipenv run pytest
+
     - name: Login to DockerHub
       env:
         USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
         PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
       run: docker login -u $USERNAME -p $PASSWORD
+
     - name: Build Docker Image
       run: docker build . --file Dockerfile --tag adenau/healthchecks-proxy:unstable
+
     - name: Push to DockerHub
       run: docker push adenau/healthchecks-proxy:unstable
