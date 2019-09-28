@@ -25,11 +25,7 @@ jobs:
         pipenv install --deploy --ignore-pipfile  
 
     - name: Install helm
-      run: |
-        curl -Lo /tmp/helm-linux-amd64.tar.gz https://storage.googleapis.com/kubernetes-helm/helm-${HELM_VERSION}-linux-amd64.tar.gz
-        tar -xvf /tmp/helm-linux-amd64.tar.gz -C /tmp/
-        chmod +x /tmp/linux-amd64/helm
-        mv /tmp/linux-amd64/helm /usr/local/bin/
+      run: curl -L https://git.io/get_helm.sh | bash
  
     - name: Login to DockerHub
       env:
