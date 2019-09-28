@@ -28,7 +28,7 @@ jobs:
       run: docker login -u $USERNAME -p $PASSWORD
     - name: Build Docker Image
       env:
-        $USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+        USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
       run: docker build . --file Dockerfile --tag $USERNAME/healthchecks-proxy:$GITHUB_REF
       
     - name: Push to DockerHub
