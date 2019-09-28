@@ -24,6 +24,11 @@ jobs:
         pip install pipenv
         pipenv install --deploy --ignore-pipfile  
 
+    - name: Install Doctl
+      run: |
+        curl -L https://github.com/digitalocean/doctl/releases/download/v1.23.1/doctl-1.23.1-linux-amd64.tar.gz  | tar xz
+        sudo mv ~/doctl /usr/local/bin
+
     - name: Install helm
       run: curl -L https://git.io/get_helm.sh | bash
  
@@ -48,8 +53,9 @@ jobs:
       uses: digitalocean/action-doctl@master
       env:
         DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.DO_ACCESSTOKEN }}
-      with:
-        args: kubernetes cluster kubeconfig show kaon > /github/home/.kube/config
+      run: |
+        doctl auth login –access-token $DIGITALOCEAN_ACCESS_TOKEN
+        doctl kubernetes cluster kubeconfig save kaon
 
     - name: Init helm
       run: helm init --client-only
