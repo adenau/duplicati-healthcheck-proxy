@@ -26,8 +26,8 @@ jobs:
 
     - name: Install Doctl
       run: |
-        curl -L https://github.com/digitalocean/doctl/releases/download/v1.23.1/doctl-1.23.1-linux-amd64.tar.gz  | tar xz
-        sudo mv ~/doctl /usr/local/bin
+        curl -L https://github.com/digitalocean/doctl/releases/download/v1.23.1/doctl-1.23.1-linux-amd64.tar.gz  | tar xvz
+        sudo mv doctl /usr/local/bin
 
     - name: Install helm
       run: curl -L https://git.io/get_helm.sh | bash
