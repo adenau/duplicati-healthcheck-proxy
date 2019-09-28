@@ -60,7 +60,7 @@ jobs:
       run: helm init --client-only
 
     - name: Push to Kubernetes cluster
-      run: helm upgrade --set image.tag=${GITHUB_REF:10} healthchecks-proxy $GITHUB_WORKSPACE/deploy/healthchecks-proxy
+      run: helm upgrade --set image.tag=${GITHUB_REF:10} --set version=${GITHUB_REF:10} healthchecks-proxy $GITHUB_WORKSPACE/deploy/healthchecks-proxy
 
 
 
